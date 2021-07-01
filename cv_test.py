@@ -18,6 +18,7 @@ cap2 = cv2.VideoCapture(2)
 # if not cap1.isOpened() or not cap2.isOpened():
 #     raise IOError("Cannot open webcams")
 
+# infinite display loop - try better control structure
 while True:
     ret, frame1 = cap1.read()
     frame1 = cv2.resize(frame1, None, fx=1, fy=1, interpolation=cv2.INTER_AREA)
