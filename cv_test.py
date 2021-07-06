@@ -1,6 +1,7 @@
 # MAIN CODE FOR VIDEO CAPTURE
 
 # next steps:
+
 # use file as a module and make class for camera control
 # make a GUI that has viewfinder display and buttons
 
