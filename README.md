@@ -1,6 +1,6 @@
 # 3d-camera-project
 
-Note - I renamed the repo so there may be weird remnants with another name lol
+Note - I renamed the repo so there may be weird remnants with another name
 
 Work for digital clone of Eli's cool film camera.
 Takes input from several 1080p webcams and captures images at the same time from different perspectives.
