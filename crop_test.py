@@ -11,6 +11,7 @@ print(sub_parent)
 os.chdir(sub_parent)
 crop_path = os.path.join(os.getcwd(), "crop_files")
 
+
 # Remove existing crop files if they exist (mainly for testing)
 if os.path.exists("crop_files"):
     shutil.rmtree(crop_path)

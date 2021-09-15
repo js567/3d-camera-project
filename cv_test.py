@@ -1,6 +1,7 @@
 # MAIN CODE FOR VIDEO CAPTURE
 # Jack Stevenson 2021
 
+
 # standardization:
 # connect webcams left to right 0 to 2
 
