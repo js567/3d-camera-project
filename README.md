@@ -17,3 +17,10 @@ combined into a GIF, which is saved.
 
 More functionality will likely be added to this program soon, so stay alert! Also, don't hesitate to fork the repo or email me if you have 
 an idea for a feature.
+
+Dependency list:
+OpenCV (pip install opencv-python)
+MediaPipe (pip install mediapipe)
+os
+time
+shutil
