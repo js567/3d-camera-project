@@ -1,9 +1,0 @@
-import opencv
-
-read in live camera stream for each camera
-
-display 4 panes in sync
-
-when specific key is pressed, grab frame from all cameras
-
-save frames to folder in directory
