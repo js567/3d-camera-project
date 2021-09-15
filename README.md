@@ -1,6 +1,6 @@
 # 3d-camera-project
 
-## A project to mimic the effects of the xx film camera using webcams and digital image processing
+## A project to replicate the effects of the Nishika N8000 3D film camera using webcams and digital image processing
 
 This project uses three webcams to create a GIF with the 3D effect of rotating around the subject. Three identical 1080p webcams
 (the ones I used were low-end, around $5 each but worked well) are placed on the screen of a laptop or on a monitor. All three are
