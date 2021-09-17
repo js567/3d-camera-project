@@ -12,8 +12,7 @@ which can then be combined in different ways to produce 3D images. While it was 
 run, and the company later went out of business due to a profiteering scheme, it gained a lot of attention in the past two decades 
 as it can be used to produce GIFs with a 3D effect. 
 
-![n8000](https://user-images.githubusercontent.com/75865953/133842282-cab76bac-8a5b-4f52-b565-2c3ebc718555.gif)
-<img src="https://user-images.githubusercontent.com/75865953/133842282-cab76bac-8a5b-4f52-b565-2c3ebc718555.gif" width="20">
+<img src="https://user-images.githubusercontent.com/75865953/133842282-cab76bac-8a5b-4f52-b565-2c3ebc718555.gif" width="300">
 
 
 
