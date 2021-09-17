@@ -4,7 +4,7 @@
 
 ### Background
 
-![image](https://user-images.githubusercontent.com/75865953/133840445-2cd9be74-6fbb-4a1a-901d-a964d3512bcc.png)
+<img src="https://user-images.githubusercontent.com/75865953/133840445-2cd9be74-6fbb-4a1a-901d-a964d3512bcc.png" width="500">
 credit: https://www.youtube.com/watch?v=mIZ1JmxGOQE
 
 The Nishika N8000 is a lenticular film camera produced in the 1980s. It uses four lenses to take photos from different perspectives
@@ -13,8 +13,6 @@ run, and the company later went out of business due to a profiteering scheme, it
 as it can be used to produce GIFs with a 3D effect. 
 
 <img src="https://user-images.githubusercontent.com/75865953/133842282-cab76bac-8a5b-4f52-b565-2c3ebc718555.gif" width="300">
-
-
 
 credit: https://www.psnwa.org/ws/nishika-n8000/
 
