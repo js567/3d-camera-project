@@ -1,6 +1,6 @@
 # 3d-camera-project
 
-## A project to replicate the effects of the Nishika N8000 3D film camera using webcams and digital image processing
+## Replicating the effects of the Nishika N8000 3D film camera using webcams and digital image processing
 
 ### Background
 
