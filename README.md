@@ -12,7 +12,7 @@ which can then be combined in different ways to produce 3D images. While it was 
 run, and the company later went out of business due to a profiteering scheme, it gained a lot of attention in the past two decades 
 as it can be used to produce GIFs with a 3D effect. 
 
-![screen-gif](https://user-images.githubusercontent.com/75865953/133840931-8bb2982a-e0f2-4124-b6e9-6fb3d462f8ad.gif)
+![screen-gif](./n8000.gif)
 credit: https://www.psnwa.org/ws/nishika-n8000/
 
 A friend of mine bought one recently, and we all thought that the effect was great. However, the hands-on processing time for making
