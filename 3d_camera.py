@@ -1,3 +1,5 @@
+# 3d_camera.py
+
 # MAIN CODE FOR VIDEO CAPTURE
 # Jack Stevenson 2021
 
@@ -5,6 +7,8 @@
 # connect webcams left to right 0 to 2
 
 # next steps:
+# clean up file structure
+# clean up script, find slow parts, add some functions
 
 # future ideas:
 # add gridlines and all control info (timer, spacebar instructions, etc.) onto viewfinder photo
@@ -23,11 +27,12 @@ from mediapipe import solutions
 import shutil
 from PIL import Image
 import glob
-import numpy
-import datetime
-import threading
+import moviepy.editor as mp
+# import numpy
+# import datetime
+# import threading
 
-# capture from 3 connected webcams - adjust resolution to 1080p - MIGHT NEED TO CHANGE ORDER/WEBCAM NUMBER
+# Capture from 3 connected webcams - adjust resolution to 1080p - MIGHT NEED TO CHANGE ORDER/WEBCAM NUMBER
 cap1 = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 cap1.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cap1.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
@@ -44,21 +49,39 @@ cap3.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 if not cap1.isOpened() or not cap2.isOpened() or not cap3.isOpened():
     raise IOError("Cannot open webcams")
 
+drawingModule = solutions.drawing_utils
+faceModule = solutions.face_mesh
+circleDrawingSpec = drawingModule.DrawingSpec(thickness=1, circle_radius=1, color=(0, 165, 255))
+lineDrawingSpec = drawingModule.DrawingSpec(thickness=1, color=(255, 0, 0))
+
 # Display and image processing loop
 while True:
 
     ret, frame1 = cap1.read()
-    #frame1_r = cv2.resize(frame1, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_AREA)
-    # cv2.imshow('3D GIF Maker', frame1_r)
-    cv2.imshow('3D GIF Maker', frame1)
 
     ret, frame2 = cap2.read()
-    #frame2_r = cv2.resize(frame2, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_AREA)
-    #cv2.imshow('Input2', frame2_r)
+    frame2_flip = cv2.flip(frame2, 1)
+    frame2_flip = cv2.resize(frame2_flip, None, fx=0.75, fy=0.75, interpolation=cv2.INTER_AREA)
+
+    # This section adds GUI overlays to the video feed
+    cv2.putText(frame2_flip, "JACK'S 3D GIF MACHINE - PRESS SPACE", (75, 75), cv2.FONT_HERSHEY_DUPLEX, 2,
+                (0, 0, 0), 10)
+    cv2.putText(frame2_flip, "JACK'S 3D GIF MACHINE - PRESS SPACE", (75, 75), cv2.FONT_HERSHEY_DUPLEX, 2,
+                (0, 165, 255), 2)
+    cv2.putText(frame2_flip, "IF THE FACE MESH DOESN'T SHOW UP, IT PROBABLY WON'T WORK", (240, 120),
+                cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+
+    # Live face mesh overlay
+    imgRGB = cv2.cvtColor(frame2_flip, cv2.COLOR_BGR2RGB)
+    results = faceModule.FaceMesh(max_num_faces=1).process(imgRGB)
+    if results.multi_face_landmarks:
+        for face_landmarks in results.multi_face_landmarks:
+            drawingModule.draw_landmarks(frame2_flip, face_landmarks,
+            faceModule.FACEMESH_CONTOURS, circleDrawingSpec, circleDrawingSpec)
+
+    cv2.imshow('3D GIF Maker', frame2_flip)
 
     ret, frame3 = cap3.read()
-    #frame3_r = cv2.resize(frame3, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_AREA)
-    #cv2.imshow('Input3', frame3_r)
 
     c = cv2.waitKey(1)
 
@@ -99,14 +122,6 @@ while True:
         os.mkdir("cv_files")
         cv_path = os.path.join(path, "cv_files")
 
-        # MediaPipe computer vision modules
-        drawingModule = solutions.drawing_utils
-        faceModule = solutions.face_mesh
-
-        # Color and shape options for face mesh
-        circleDrawingSpec = drawingModule.DrawingSpec(thickness=1, circle_radius=1, color=(0, 255, 0))
-        lineDrawingSpec = drawingModule.DrawingSpec(thickness=1, color=(255, 0, 0))
-
         x_dict = {}
         y_dict = {}
 
@@ -140,29 +155,12 @@ while True:
                                     x_dict[crop_name] = cx
                                     y_dict[crop_name] = cy
 
-                            drawingModule.draw_landmarks(crop_image, result, faceModule.FACEMESH_CONTOURS,
-                                                         circleDrawingSpec,
-                                                         lineDrawingSpec)
-                            cv_name = filename[:6] + "_cv" + filename[6:]
-                            os.chdir(cv_path)
-                            cv2.imwrite(cv_name, crop_image)
-
-                            # cv2.imshow('Computer Vision Processing', image_cropped)
-                            # cv2.waitKey(1)
-                            # cv2.destroyWindow('Computer Vision Processing')
-
-                            # plt.title('COMPUTER VISION PROCESSING')
-                            # plt.imshow(image)
-
-        # Create CV image to display
-        os.chdir(cv_path)
-        cv_image = cv2.imread('frame1_cv.png')
-        # cv_1 = cv2.resize(cv_1, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_AREA)
-        # cv_2 = cv2.imread('frame2_cv.png')
-        # cv_2 = cv2.resize(cv_2, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_AREA)
-        # cv_3 = cv2.imread('frame3_cv.png')
-        # cv_3 = cv2.resize(cv_3, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_AREA)
-        # landscape = numpy.concatenate((cv_1, cv_2, cv_3), axis=1)
+                            # drawingModule.draw_landmarks(crop_image, result, faceModule.FACEMESH_CONTOURS,
+                            #                              circleDrawingSpec,
+                            #                              lineDrawingSpec)
+                            # cv_name = filename[:6] + "_cv" + filename[6:]
+                            # os.chdir(cv_path)
+                            # cv2.imwrite(cv_name, crop_image)
 
         # Sort x and y dictionaries by value to find shortest distance to each edge for cropping
         x_dict_sorted = dict(sorted(x_dict.items(), key=lambda x: x[1]))
@@ -171,8 +169,8 @@ while True:
         # Get name of files with tightest borders
         smallest_x = list(x_dict_sorted.keys())[0]
         smallest_y = list(y_dict_sorted.keys())[0]
-        largest_x = list(x_dict_sorted.keys())[2]
-        largest_y = list(y_dict_sorted.keys())[2]
+        largest_x = list(x_dict_sorted.keys())[-1]
+        largest_y = list(y_dict_sorted.keys())[-1]
 
         x_l = x_dict_sorted[smallest_x]
         x_r = w - x_dict_sorted[largest_x]
@@ -227,23 +225,32 @@ while True:
             new_frame = Image.open(i)
             frames.append(new_frame)
 
+        os.chdir(path)
+
         # Save into a GIF file that loops forever
         frames[0].save('gif.gif', format='GIF',
                        append_images=frames[1:],
                        save_all=True,
                        duration=230, loop=0)
 
+        # Save a video version
+        clip = mp.VideoFileClip("gif.gif")
+        clip.write_videofile("video.mp4")
+
+        os.chdir('C:/GIF Repository')
+
+        # Save into a GIF file that loops forever
+        frames[0].save(new_dir + '.gif', format='GIF',
+                       append_images=frames[1:],
+                       save_all=True,
+                       duration=230, loop=0)
+
         # Show GIF image
-        os.startfile('gif.gif')
+        os.startfile(new_dir + '.gif')
 
         final = time.time()
         elapsed = str(final - initial)
         print("Done processing: " + elapsed)
-
-        cv_window_name = "Computer Vision"
-        cv2.imshow(cv_window_name, cv_image)
-        cv2.waitKey(0)
-        cv2.destroyWindow(cv_window_name)
 
     # Escape key (ASCII 27) stops program
     if c == 27:
