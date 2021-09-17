@@ -11,9 +11,9 @@ The Nishika N8000 is a lenticular film camera produced in the 1980s. It uses fou
 which can then be combined in different ways to produce 3D images. While it was never extremely popular during its production
 run, and the company later went out of business due to a profiteering scheme, it gained a lot of attention in the past two decades 
 as it can be used to produce GIFs with a 3D effect. 
+![n8000](https://user-images.githubusercontent.com/75865953/133842282-cab76bac-8a5b-4f52-b565-2c3ebc718555.gif)
 
-![n8000](https://user-images.githubusercon![Razorback_01](https://user-images.githubusercontent.com/75865953/133842185-605abaf0-9e84-433d-832b-d97c2fc2d7b7.gif)
-tent.com/75865953/133842175-332b1a29-5328-4398-84d0-d2821b725009.gif)
+
 
 credit: https://www.psnwa.org/ws/nishika-n8000/
 
