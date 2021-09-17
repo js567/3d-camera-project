@@ -2,6 +2,27 @@
 
 ## A project to replicate the effects of the Nishika N8000 3D film camera using webcams and digital image processing
 
+### Background
+
+![image](https://user-images.githubusercontent.com/75865953/133840445-2cd9be74-6fbb-4a1a-901d-a964d3512bcc.png)
+credit: https://www.youtube.com/watch?v=mIZ1JmxGOQE
+
+The Nishika N8000 is a lenticular film camera produced in the 1980s. It uses four lenses to take photos from different perspectives
+which can then be combined in different ways to produce 3D images. While it was never extremely popular during its production
+run, and the company later went out of business due to a profiteering scheme, it gained a lot of attention in the past two decades 
+as it can be used to produce GIFs with a 3D effect. 
+
+![image](https://user-images.githubusercontent.com/75865953/133840931-8bb2982a-e0f2-4124-b6e9-6fb3d462f8ad.png)
+credit: https://www.psnwa.org/ws/nishika-n8000/
+
+A friend of mine bought one recently, and we all thought that the effect was great. However, the hands-on processing time for making
+a GIF was long. The photos had to be developed and scanned, and then processed to line up the photos around a single point, such as
+the nose of the person in the foreground. Film also is not as accessible and inexpensive as it used to be. 
+
+Hence, the digital replica of this camera was conceived. 
+
+### Setup
+
 This project uses three webcams to create a GIF with the 3D effect of rotating around the subject. Three identical 1080p webcams
 (the ones I used were low-end, around $5 each but worked well) are placed on the screen of a laptop or on a monitor. All three are
 plugged into USB ports on the computer.
