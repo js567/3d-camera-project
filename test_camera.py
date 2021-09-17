@@ -1,7 +1,6 @@
 import cv2
 import mediapipe
 
-
 drawingModule = mediapipe.solutions.drawing_utils
 faceModule = mediapipe.solutions.face_mesh
 
