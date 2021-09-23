@@ -13,7 +13,7 @@ run, it later gained more attention because it can be used to make GIFs with a 3
 
 Examples of GIFs made with the N8000:
 
-<img src="https://user-images.githubusercontent.com/75865953/133842282-cab76bac-8a5b-4f52-b565-2c3ebc718555.gif" width="300"> <img src="https://user-images.githubusercontent.com/75865953/133843048-a6036e94-2912-4aa0-a291-febea2c95065.gif" width="300"> <img src="https://user-images.githubusercontent.com/75865953/133843057-fa6e1e22-856a-45fb-bb88-70d4b83a7ac5.gif" width="300">
+<img src="https://user-images.githubusercontent.com/75865953/133842282-cab76bac-8a5b-4f52-b565-2c3ebc718555.gif" width="300"> <img src="https://user-images.githubusercontent.com/75865953/133843048-a6036e94-2912-4aa0-a291-febea2c95065.gif" width="300"> <img src="https://user-images.githubusercontent.com/75865953/133843057-fa6e1e22-856a-45fb-bb88-70d4b83a7ac5.gif" width="275">
 https://giphy.com/search/nishika-n8000/
 
 A friend of mine bought one recently, and we all loved the effect. However, the hands-on processing time for making
