@@ -20,7 +20,7 @@ A friend of mine bought one recently, and we all loved the effect. However, the 
 a GIF was long. The photos had to be developed and scanned, and then processed to line up the photos around a single point, such as
 the nose of the person in the foreground. Film also is not as accessible and inexpensive as it used to be. 
 
-Hence, the digital replica of this camera was conceived. 
+Hence, a digital replica of this camera was conceived. 
 
 ### Setup
 
@@ -29,7 +29,7 @@ This project uses three webcams to create a GIF with the 3D effect of rotating a
 plugged into USB ports on the computer.
 
 (NOTE: this project can be extended to include more cameras, assuming you have more than three USB ports, which would make a better GIF. 
-I couldn't get OpenCV to read multiple cameras over the same USB-C hub, even with threading, so I was stuck with three. 
+I was having issues in OpenCV when I tried to stream multiple cameras over the same USB-C hub, even with threading, so I was stuck with three. 
 If you figure out a way around it, let me know!)
 
 When the script is run, all three cameras start capturing video. When the spacebar is pressed, a snapshot is taken from each camera
@@ -37,13 +37,16 @@ and saved to a new directory. These photos are then copied and processed using M
 nose of the subject. The photos are then cropped so that the tip of the nose is in the same location for each photo. They are
 combined into a GIF, which is saved.
 
-More functionality will likely be added to this program soon, so stay alert! Also, don't hesitate to fork the repo or email me if you have 
-an idea for a feature.
-
-Python dependency list: OpenCV (pip install opencv-python), MediaPipe (pip install mediapipe), os, time, shutil
+Python dependency list: OpenCV, MediaPipe, os, time, shutil, PIL Image, glob
 
 ### Outcome
 
 
 
+The end result of the program is somewhat less smooth than the film camera, but I believe that it is largely due to the number of 
+cameras/apertures involved. An interesting follow-up would include using a fourth camera to more closely resemble the output of 
+the film camera or even push it farther by using five or six cameras at a desktop.
 
+A friend of mine had the idea of running the system on a Raspberry Pi which would be a lot more portable than the current configuration.
+My concern with this is that the image processing might not run fast enough to be useful, but it could always just capture photos to 
+be processed later on another device.
