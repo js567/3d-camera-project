@@ -29,7 +29,7 @@ This project uses three webcams to create a GIF with the 3D effect of rotating a
 plugged into USB ports on the computer.
 
 (NOTE: this project can be extended to include more cameras, assuming you have more than three USB ports, which would make a better GIF. 
-I was having issues in OpenCV when I tried to stream multiple cameras over the same USB-C hub, even with threading, so I was stuck with three. 
+I had issues in OpenCV when I tried to stream multiple cameras over the same USB-C hub, even with threading, so I was stuck with three. 
 If you figure out a way around it, let me know!)
 
 When the script is run, all three cameras start capturing video. When the spacebar is pressed, a snapshot is taken from each camera
