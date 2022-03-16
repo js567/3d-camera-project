@@ -7,6 +7,7 @@
 <img src="https://user-images.githubusercontent.com/75865953/133840445-2cd9be74-6fbb-4a1a-901d-a964d3512bcc.png" width="500">
 credit: https://www.youtube.com/watch?v=mIZ1JmxGOQE
 
+
 The Nishika N8000 is a lenticular film camera produced in the 1980s. It uses four lenses to take photos from different perspectives
 which can then be combined in different ways to produce 3D images. While it was never extremely popular during its production
 run, it later gained more attention because it can be used to make GIFs with a 3D effect. 
